@@ -337,5 +337,224 @@
         </a>
 
         <!-- Instagram -->
-        <a href="https://instagram.com/vasquezyparraguezasociados" target="_blank" class="social
+        <a href="https://instagram.com/vasquezyparraguezasociados" target="_blank" class="social-btn btn-instagram">
+          <i class="fa-brands fa-instagram text-base"></i>
+          <span>Instagram</span>
+        </a>
+
+        <!-- Correo -->
+        <a href="mailto:vasquezyparraguezasociados@gmail.com?subject=Solicitud%20de%20Primera%20Asesor%C3%ADa%20Gratuita" class="social-btn btn-email">
+          <i class="fa-solid fa-envelope text-base"></i>
+          <span>Email</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FOOTER FIJO: DIRECCIÓN Y CÓMO LLEGAR CON PIN DE MAPA -->
+    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Comercio+19940+San+Jose+de+Maipo+Portal+Isidora" 
+       target="_blank" 
+       class="footer-fixed" 
+       title="Abrir ubicación en Google Maps">
+      <div class="text-left pr-2">
+        <span class="block text-[10px] font-bold text-[#d4af37] tracking-wider uppercase">DIRECCIÓN:</span>
+        <p class="text-[10px] text-slate-100 font-medium leading-tight">Calle Comercio #19.940, San José de Maipo</p>
+        <span class="text-[9px] text-slate-300">(Portal Isidora, segundo piso)</span>
+      </div>
+      <div class="w-10 h-10 rounded-full bg-[#1e293b] border border-[#d4af37] flex items-center justify-center text-[#d4af37] flex-shrink-0 shadow-md">
+        <i class="fa-solid fa-location-dot text-base text-[#eab308]"></i>
+      </div>
+    </a>
+
+    <!-- MODAL DETALLE DE SERVICIOS -->
+    <div id="serviceModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'serviceModal')">
+      <div class="modal-sheet">
+        <div class="bg-[#0a192f] p-3.5 border-b border-[#c5a059] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i id="modalIcon" class="fa-solid fa-balance-scale text-[#d4af37] text-base"></i>
+            <h4 id="modalTitle" class="font-cinzel text-xs font-bold text-white tracking-wide">ÁREA LEGAL</h4>
+          </div>
+          <button onclick="closeModal('serviceModal')" class="w-7 h-7 rounded-full bg-[#1e293b] text-[#d4af37] flex items-center justify-center">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <div class="p-4 overflow-y-auto max-h-[50vh]">
+          <p id="modalDesc" class="text-xs text-slate-600 mb-3 leading-relaxed"></p>
+          <ul id="modalList" class="space-y-2 text-xs text-slate-800 mb-4"></ul>
           
+          <div class="bg-amber-50 p-2.5 rounded-xl border border-amber-200">
+            <span class="block text-[11px] font-bold text-amber-900 mb-0.5">Asesoría Inicial</span>
+            <p class="text-[10px] text-amber-800 leading-tight">Coordina la primera evaluación de tu caso sin costo directamente con el equipo.</p>
+          </div>
+        </div>
+
+        <div class="p-3 bg-slate-50 border-t border-slate-200">
+          <a id="modalActionBtn" href="#" target="_blank" class="w-full py-2.5 px-3 bg-gradient-to-r from-[#128c7e] to-[#25d366] text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Agendar primera asesoría gratuita</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DIAGNÓSTICO EN 3 PASOS -->
+    <div id="diagnosisModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'diagnosisModal')">
+      <div class="modal-sheet">
+        <div class="bg-[#0a192f] p-3.5 border-b border-[#c5a059] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-bolt text-[#d4af37]"></i>
+            <h4 class="font-cinzel text-xs font-bold text-white">DIAGNÓSTICO EN 3 PASOS</h4>
+          </div>
+          <button onclick="closeModal('diagnosisModal')" class="w-7 h-7 rounded-full bg-[#1e293b] text-[#d4af37] flex items-center justify-center">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <div class="p-4 space-y-3.5">
+          <div>
+            <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-1">1. Materia del caso:</label>
+            <select id="diagArea" class="w-full p-2 text-xs bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-medium focus:border-[#c5a059] outline-none">
+              <option value="Derecho de Familia (Alimentos / Divorcio / Régimen)">Derecho de Familia (Alimentos / Divorcio)</option>
+              <option value="Derecho Civil (Propiedades / Terrenos / Contratos)">Derecho Civil (Propiedades / Contratos)</option>
+              <option value="Derecho Penal (Defensa urgente / Audiencia / Querella)">Derecho Penal (Defensa / Querella)</option>
+              <option value="Consulta Jurídica General">Otra Consulta Jurídica</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-1">2. Nivel de urgencia:</label>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <label class="border border-slate-300 rounded-lg p-2 flex items-center gap-1.5 cursor-pointer has-[:checked]:border-[#c5a059] has-[:checked]:bg-amber-50/50">
+                <input type="radio" name="urgency" value="Inmediata (Dentro de las 24 hrs)" checked class="accent-[#c5a059]">
+                <span class="text-slate-700 font-medium text-[10.5px]">Inmediata (24 hrs)</span>
+              </label>
+              <label class="border border-slate-300 rounded-lg p-2 flex items-center gap-1.5 cursor-pointer has-[:checked]:border-[#c5a059] has-[:checked]:bg-amber-50/50">
+                <input type="radio" name="urgency" value="Agendamiento durante la semana" class="accent-[#c5a059]">
+                <span class="text-slate-700 font-medium text-[10.5px]">Durante la semana</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-1">3. Breve detalle (Opcional):</label>
+            <input id="diagDetail" type="text" placeholder="Ej: Posesión efectiva en San José de Maipo" class="w-full p-2 text-xs bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:border-[#c5a059] outline-none">
+          </div>
+        </div>
+
+        <div class="p-3 bg-slate-50 border-t border-slate-200">
+          <button onclick="sendDiagnosticWhatsApp()" class="w-full py-2.5 bg-gradient-to-r from-[#0a192f] to-[#1e3a8a] text-[#d4af37] border border-[#c5a059] rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md">
+            <i class="fa-brands fa-whatsapp text-sm text-green-400"></i>
+            <span>Agendar primera asesoría gratuita</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Detección de carga de la imagen de fondo para coordinar las capas
+    const testImg = new Image();
+    testImg.src = 'fondo.jpg';
+    testImg.onload = function() {
+      // Si la imagen cargó bien, ocultamos el encabezado de respaldo HTML
+      const fallback = document.getElementById('fallbackHeader');
+      if (fallback) fallback.style.display = 'none';
+    };
+
+    const serviceData = {
+      civil: {
+        title: "DERECHO CIVIL",
+        icon: "fa-building-columns",
+        desc: "Protegemos tus bienes, contratos y acuerdos patrimoniales con rigurosidad técnica.",
+        items: [
+          "Estudios de Título e Inmobiliario",
+          "Regularización de Terrenos y Propiedades",
+          "Posesiones Efectivas testadas e intestadas",
+          "Redacción de Escrituras Públicas y Contratos",
+          "Juicios de Arriendo y Cobro de Pesos"
+        ]
+      },
+      familia: {
+        title: "DERECHO DE FAMILIA",
+        icon: "fa-people-roof",
+        desc: "Acompañamiento empático y estratégico en temas cruciales de tu entorno familiar.",
+        items: [
+          "Pensión de Alimentos (Demanda, Aumento, Rebaja, Cese)",
+          "Cobro efectivo y liquidación de deuda alimentaria",
+          "Cuidado Personal y Relación Directa y Regular",
+          "Divorcios (Mutuo acuerdo, unilateral, culpa)",
+          "Liquidación de Sociedad Conyugal y Compensación"
+        ]
+      },
+      penal: {
+        title: "DERECHO PENAL",
+        icon: "fa-gavel",
+        desc: "Defensa jurídica técnica y oportuna con dedicación exclusiva a resguardar tu libertad.",
+        items: [
+          "Defensa Penal en Control de Detención (24/7)",
+          "Procedimientos Simplificados y Abreviados",
+          "Preparación y Litigación en Juicios Orales",
+          "Recursos de Apelación y Amparo Constitucional",
+          "Interposición de Querellas Criminales para Víctimas"
+        ]
+      }
+    };
+
+    function openServiceModal(areaKey) {
+      const data = serviceData[areaKey];
+      if (!data) return;
+
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalDesc').textContent = data.desc;
+      
+      const iconEl = document.getElementById('modalIcon');
+      iconEl.className = `fa-solid ${data.icon} text-[#d4af37] text-base`;
+
+      const listEl = document.getElementById('modalList');
+      listEl.innerHTML = '';
+      data.items.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2';
+        li.innerHTML = `<i class="fa-solid fa-check text-[#c5a059] mt-0.5 text-[10px]"></i><span>${item}</span>`;
+        listEl.appendChild(li);
+      });
+
+      const message = encodeURIComponent(`Hola, me comunico desde la web móvil para solicitar mi primera asesoría gratuita en: ${data.title}.`);
+      document.getElementById('modalActionBtn').href = `https://wa.me/56979116118?text=${message}`;
+
+      document.getElementById('serviceModal').classList.add('active');
+    }
+
+    function openDiagnosisModal() {
+      document.getElementById('diagnosisModal').classList.add('active');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    function closeModalOnBackdrop(event, id) {
+      if (event.target.id === id) {
+        closeModal(id);
+      }
+    }
+
+    function sendDiagnosticWhatsApp() {
+      const area = document.getElementById('diagArea').value;
+      const urgency = document.querySelector('input[name="urgency"]:checked').value;
+      const detail = document.getElementById('diagDetail').value || 'Sin detalles previos';
+
+      const text = `⚖️ *SOLICITUD DE PRIMERA ASESORÍA GRATUITA - V&P ABOGADOS*%0A%0A` +
+                   `📌 *Materia:* ${area}%0A` +
+                   `⏱️ *Urgencia:* ${urgency}%0A` +
+                   `📝 *Detalle:* ${detail}%0A%0A` +
+                   `_Deseo agendar mi primera asesoría legal gratuita._`;
+
+      window.open(`https://wa.me/56979116118?text=${text}`, '_blank');
+      closeModal('diagnosisModal');
+    }
+  </script>
+</body>
+</html>
