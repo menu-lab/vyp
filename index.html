@@ -2,17 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Vásquez y Parraguez ::: Abogados / Estudio Jurídico</title>
   
-  <!-- Favicon SVG oficial sobre fondo blanco -->
+  <!-- Favicon oficial en alta resolución sobre fondo blanco -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23ffffff'/%3E%3Ccircle cx='256' cy='256' r='236' fill='none' stroke='%23d4af37' stroke-width='22'/%3E%3Ccircle cx='256' cy='256' r='220' fill='%230a192f'/%3E%3Ctext x='256' y='325' font-family='Cinzel, Georgia, serif' font-size='165' font-weight='bold' fill='%23d4af37' text-anchor='middle'%3EV%26P%3C/text%3E%3C/svg%3E">
   
   <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Tipografías -->
+  <!-- Tipografías Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,39 +22,43 @@
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
       user-select: none;
-    }
-
-    body {
       margin: 0;
       padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden; /* Cero scroll en toda la ventana */
       background-color: #0b1320;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
       font-family: 'Montserrat', sans-serif;
-      overflow-x: hidden;
     }
 
-    /* Lienzo exacto 900x1700 px */
+    /* Contenedor adaptativo: ocupa exactamente la pantalla disponible sin scroll */
     .app-screen {
-      width: 100%;
-      max-width: 480px;
+      height: 100dvh;
+      max-height: 100dvh;
       aspect-ratio: 900 / 1700;
+      width: auto;
+      max-width: 100vw;
       position: relative;
       background-image: url('fondo.jpg');
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-position: center;
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
     }
 
     .font-cinzel {
       font-family: 'Cinzel', serif;
     }
 
-    /* Zona interactiva central calibrada al centro del fondo */
+    /* Zona interactiva central ajustada al mármol */
     .content-canvas {
       position: absolute;
       top: 24.5%;
@@ -67,58 +71,58 @@
       z-index: 10;
     }
 
-    /* Botonera 3D con relieve dorado y azul marino */
+    /* Botones 3D estilo institucional */
     .btn-card {
       position: relative;
       width: 100%;
       background: linear-gradient(135deg, #0d1e38 0%, #061122 100%);
       border: 1.8px solid #c5a059;
-      border-radius: 14px;
-      padding: 10px 14px;
+      border-radius: 13px;
+      padding: 9px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       color: #ffffff;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(212, 175, 55, 0.4);
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(212, 175, 55, 0.4);
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
     }
 
     .btn-card:active {
       transform: scale(0.975) translateY(2px);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     }
 
-    /* Icono de mano pulsante para guiar la interacción */
+    /* Mano interactiva indicadora */
     .pointer-icon {
       position: absolute;
-      right: -8px;
-      bottom: -10px;
-      font-size: 20px;
+      right: -6px;
+      bottom: -8px;
+      font-size: 19px;
       color: #eab308;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
-      animation: pointPulse 1.4s infinite alternate ease-in-out;
+      animation: pointPulse 1.3s infinite alternate ease-in-out;
       pointer-events: none;
       z-index: 20;
     }
 
     @keyframes pointPulse {
       0% { transform: translateY(0) scale(1); }
-      100% { transform: translateY(-4px) scale(1.15); }
+      100% { transform: translateY(-3px) scale(1.15); }
     }
 
     /* Botones de canales directos */
     .social-btn {
       flex: 1;
-      height: 44px;
-      border-radius: 12px;
+      height: 42px;
+      border-radius: 11px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
+      gap: 6px;
       font-weight: 700;
       font-size: 11px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
       box-shadow: 0 4px 10px rgba(0,0,0,0.18);
       transition: transform 0.15s ease;
@@ -147,341 +151,5 @@
       border: 1px solid #c5a059;
     }
 
-    /* Hotspot táctil del footer fijo para geolocalización */
-    .map-hotspot {
-      position: absolute;
-      bottom: 2.2%;
-      left: 5%;
-      width: 90%;
-      height: 14%;
-      cursor: pointer;
-      z-index: 25;
-      border-radius: 18px;
-    }
-
-    /* Modales */
-    .modal-backdrop {
-      display: none;
-      position: absolute;
-      inset: 0;
-      background: rgba(4, 11, 22, 0.75);
-      backdrop-filter: blur(5px);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    .modal-backdrop.active {
-      display: flex;
-      animation: fadeIn 0.25s ease-out;
-    }
-
-    .modal-sheet {
-      background: #ffffff;
-      border: 2px solid #c5a059;
-      border-radius: 20px;
-      width: 100%;
-      max-height: 85%;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.96); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
-</head>
-<body>
-
-  <main class="app-screen">
-
-    <!-- ZONA CENTRAL DE BOTONES E INTERACCIÓN -->
-    <section class="content-canvas">
-
-      <!-- FACTOR INNOVACIÓN: ASISTENTE DE DIAGNÓSTICO -->
-      <div onclick="openDiagnosisModal()" class="btn-card !bg-gradient-to-r !from-[#785b24] !via-[#d4af37] !to-[#9a7428] !border-[#fff] !py-3">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-[#0a192f] flex items-center justify-center text-[#d4af37] shadow-inner text-base">
-            <i class="fa-solid fa-scale-balanced"></i>
-          </div>
-          <div>
-            <span class="block text-[11px] font-bold text-[#0a192f] tracking-wider uppercase">Asistente Virtual</span>
-            <span class="block text-sm font-extrabold text-[#0a192f] leading-tight font-cinzel">Diagnóstico Legal Rápido</span>
-          </div>
-        </div>
-        <div class="text-[#0a192f] pr-2 text-sm">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <i class="fa-solid fa-hand-pointer pointer-icon !text-[#0a192f]"></i>
-      </div>
-
-      <!-- BOTÓN DERECHO CIVIL -->
-      <div onclick="openServiceModal('civil')" class="btn-card">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-[#d4af37]/50 flex items-center justify-center text-[#d4af37]">
-            <i class="fa-solid fa-building-columns text-base"></i>
-          </div>
-          <div>
-            <h3 class="font-cinzel text-xs font-bold text-[#d4af37] tracking-wider">DERECHO CIVIL</h3>
-            <p class="text-[10.5px] text-slate-300 leading-tight">Posesiones, Terrenos, Contratos</p>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-[#d4af37]/70 pr-2"></i>
-        <i class="fa-solid fa-hand-pointer pointer-icon"></i>
-      </div>
-
-      <!-- BOTÓN DERECHO DE FAMILIA -->
-      <div onclick="openServiceModal('familia')" class="btn-card">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-[#d4af37]/50 flex items-center justify-center text-[#d4af37]">
-            <i class="fa-solid fa-people-roof text-base"></i>
-          </div>
-          <div>
-            <h3 class="font-cinzel text-xs font-bold text-[#d4af37] tracking-wider">DERECHO DE FAMILIA</h3>
-            <p class="text-[10.5px] text-slate-300 leading-tight">Alimentos, Divorcios, Cuidado Personal</p>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-[#d4af37]/70 pr-2"></i>
-        <i class="fa-solid fa-hand-pointer pointer-icon"></i>
-      </div>
-
-      <!-- BOTÓN DERECHO PENAL -->
-      <div onclick="openServiceModal('penal')" class="btn-card">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-[#d4af37]/50 flex items-center justify-center text-[#d4af37]">
-            <i class="fa-solid fa-gavel text-base"></i>
-          </div>
-          <div>
-            <h3 class="font-cinzel text-xs font-bold text-[#d4af37] tracking-wider">DERECHO PENAL</h3>
-            <p class="text-[10.5px] text-slate-300 leading-tight">Defensa, Audiencias, Querellas</p>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-xs text-[#d4af37]/70 pr-2"></i>
-        <i class="fa-solid fa-hand-pointer pointer-icon"></i>
-      </div>
-
-      <!-- ACCESOS DE CONTACTO DIRECTO -->
-      <div class="flex gap-2.5 pt-1">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/56979116118?text=Hola,%20quisiera%20agendar%20mi%20primera%20asesor%C3%ADa%20gratuita%20con%20V%C3%A1squez%20y%20Parraguez." target="_blank" class="social-btn btn-whatsapp relative">
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-          <span>WhatsApp</span>
-          <i class="fa-solid fa-hand-pointer pointer-icon !text-white !right-0 !bottom-[-6px]"></i>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://instagram.com/vasquezyparraguezasociados" target="_blank" class="social-btn btn-instagram">
-          <i class="fa-brands fa-instagram text-lg"></i>
-          <span>Instagram</span>
-        </a>
-
-        <!-- Correo -->
-        <a href="mailto:vasquezyparraguezasociados@gmail.com?subject=Solicitud%20de%20Primera%20Asesor%C3%ADa%20Gratuita" class="social-btn btn-email">
-          <i class="fa-solid fa-envelope text-lg"></i>
-          <span>Email</span>
-        </a>
-      </div>
-
-    </section>
-
-    <!-- FOOTER FIJO: HOTSPOT PARA ABRIR GOOGLE MAPS -->
-    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Comercio+19940+San+Jose+de+Maipo+Portal+Isidora" 
-       target="_blank" 
-       class="map-hotspot" 
-       title="Abrir ubicación en Google Maps">
-    </a>
-
-    <!-- MODAL DETALLE DE ÁREAS JURÍDICAS -->
-    <div id="serviceModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'serviceModal')">
-      <div class="modal-sheet">
-        <!-- Encabezado del Modal -->
-        <div class="bg-[#0a192f] p-4 border-b border-[#c5a059] flex items-center justify-between">
-          <div class="flex items-center gap-2.5">
-            <i id="modalIcon" class="fa-solid fa-balance-scale text-[#d4af37] text-lg"></i>
-            <h4 id="modalTitle" class="font-cinzel text-sm font-bold text-white tracking-wide">ÁREA LEGAL</h4>
-          </div>
-          <button onclick="closeModal('serviceModal')" class="w-8 h-8 rounded-full bg-[#1e293b] text-[#d4af37] flex items-center justify-center hover:bg-[#334155]">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-
-        <!-- Lista de Servicios -->
-        <div class="p-4 overflow-y-auto max-h-[55vh]">
-          <p id="modalDesc" class="text-xs text-slate-600 mb-3 leading-relaxed"></p>
-          <ul id="modalList" class="space-y-2 text-xs text-slate-800 mb-4"></ul>
-          
-          <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 mb-2">
-            <span class="block text-[11px] font-bold text-amber-900 mb-0.5">Asesoría Inicial</span>
-            <p class="text-[10px] text-amber-800 leading-tight">Coordina tu primera evaluación de caso sin costo directamente por WhatsApp.</p>
-          </div>
-        </div>
-
-        <!-- Botón de Acción del Modal -->
-        <div class="p-3 bg-slate-50 border-t border-slate-200">
-          <a id="modalActionBtn" href="#" target="_blank" class="w-full py-2.5 px-4 bg-gradient-to-r from-[#128c7e] to-[#25d366] text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md">
-            <i class="fa-brands fa-whatsapp text-sm"></i>
-            <span>Agendar primera asesoría gratuita</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL ASISTENTE EN 3 PASOS -->
-    <div id="diagnosisModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'diagnosisModal')">
-      <div class="modal-sheet">
-        <div class="bg-[#0a192f] p-4 border-b border-[#c5a059] flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <i class="fa-solid fa-bolt text-[#d4af37]"></i>
-            <h4 class="font-cinzel text-xs font-bold text-white">DIAGNÓSTICO EN 3 PASOS</h4>
-          </div>
-          <button onclick="closeModal('diagnosisModal')" class="w-8 h-8 rounded-full bg-[#1e293b] text-[#d4af37] flex items-center justify-center">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-
-        <div class="p-4 space-y-4">
-          <!-- Paso 1 -->
-          <div>
-            <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">1. Materia del caso:</label>
-            <select id="diagArea" class="w-full p-2.5 text-xs bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-medium focus:border-[#c5a059] outline-none">
-              <option value="Derecho de Familia (Alimentos / Divorcio / Régimen)">Derecho de Familia (Alimentos / Divorcio)</option>
-              <option value="Derecho Civil (Propiedades / Terrenos / Contratos)">Derecho Civil (Propiedades / Contratos)</option>
-              <option value="Derecho Penal (Defensa urgente / Audiencia / Querella)">Derecho Penal (Defensa / Querella)</option>
-              <option value="Consulta Jurídica General">Otra Consulta Jurídica</option>
-            </select>
-          </div>
-
-          <!-- Paso 2 -->
-          <div>
-            <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">2. Nivel de urgencia:</label>
-            <div class="grid grid-cols-2 gap-2 text-xs">
-              <label class="border border-slate-300 rounded-lg p-2.5 flex items-center gap-2 cursor-pointer has-[:checked]:border-[#c5a059] has-[:checked]:bg-amber-50/50">
-                <input type="radio" name="urgency" value="Inmediata (Dentro de las 24 hrs)" checked class="accent-[#c5a059]">
-                <span class="text-slate-700 font-medium text-[11px]">Inmediata (24 hrs)</span>
-              </label>
-              <label class="border border-slate-300 rounded-lg p-2.5 flex items-center gap-2 cursor-pointer has-[:checked]:border-[#c5a059] has-[:checked]:bg-amber-50/50">
-                <input type="radio" name="urgency" value="Agendamiento durante la semana" class="accent-[#c5a059]">
-                <span class="text-slate-700 font-medium text-[11px]">Agendar semana</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Paso 3 -->
-          <div>
-            <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">3. Breve detalle (Opcional):</label>
-            <input id="diagDetail" type="text" placeholder="Ej: Consulta por posesión efectiva en San José de Maipo" class="w-full p-2.5 text-xs bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:border-[#c5a059] outline-none">
-          </div>
-        </div>
-
-        <div class="p-3 bg-slate-50 border-t border-slate-200">
-          <button onclick="sendDiagnosticWhatsApp()" class="w-full py-2.5 bg-gradient-to-r from-[#0a192f] to-[#1e3a8a] text-[#d4af37] border border-[#c5a059] rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md">
-            <i class="fa-brands fa-whatsapp text-sm text-green-400"></i>
-            <span>Agendar primera asesoría gratuita</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- LÓGICA DE INTERACCIÓN Y WHATSAPP -->
-  <script>
-    const serviceData = {
-      civil: {
-        title: "DERECHO CIVIL",
-        icon: "fa-building-columns",
-        desc: "Protegemos tus bienes, contratos y acuerdos patrimoniales con rigurosidad técnica.",
-        items: [
-          "Estudios de Título e Inmobiliario",
-          "Regularización de Terrenos y Propiedades",
-          "Posesiones Efectivas testadas e intestadas",
-          "Redacción de Escrituras Públicas y Contratos",
-          "Juicios de Arriendo y Cobro de Pesos"
-        ]
-      },
-      familia: {
-        title: "DERECHO DE FAMILIA",
-        icon: "fa-people-roof",
-        desc: "Acompañamiento empático y estratégico en temas cruciales de tu entorno familiar.",
-        items: [
-          "Pensión de Alimentos (Demanda, Aumento, Rebaja, Cese)",
-          "Cobro efectivo y liquidación de deuda alimentaria",
-          "Cuidado Personal y Relación Directa y Regular",
-          "Divorcios (Mutuo acuerdo, unilateral, culpa)",
-          "Liquidación de Sociedad Conyugal y Compensación"
-        ]
-      },
-      penal: {
-        title: "DERECHO PENAL",
-        icon: "fa-gavel",
-        desc: "Defensa jurídica técnica y oportuna con dedicación exclusiva a resguardar tu libertad.",
-        items: [
-          "Defensa Penal en Control de Detención (24/7)",
-          "Procedimientos Simplificados y Abreviados",
-          "Preparación y Litigación en Juicios Orales",
-          "Recursos de Apelación y Amparo Constitucional",
-          "Interposición de Querellas Criminales para Víctimas"
-        ]
-      }
-    };
-
-    function openServiceModal(areaKey) {
-      const data = serviceData[areaKey];
-      if (!data) return;
-
-      document.getElementById('modalTitle').textContent = data.title;
-      document.getElementById('modalDesc').textContent = data.desc;
-      
-      const iconEl = document.getElementById('modalIcon');
-      iconEl.className = `fa-solid ${data.icon} text-[#d4af37] text-lg`;
-
-      const listEl = document.getElementById('modalList');
-      listEl.innerHTML = '';
-      data.items.forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'flex items-start gap-2';
-        li.innerHTML = `<i class="fa-solid fa-check text-[#c5a059] mt-0.5 text-[10px]"></i><span>${item}</span>`;
-        listEl.appendChild(li);
-      });
-
-      const message = encodeURIComponent(`Hola, me comunico desde la web móvil para solicitar mi primera asesoría gratuita en: ${data.title}.`);
-      document.getElementById('modalActionBtn').href = `https://wa.me/56979116118?text=${message}`;
-
-      document.getElementById('serviceModal').classList.add('active');
-    }
-
-    function openDiagnosisModal() {
-      document.getElementById('diagnosisModal').classList.add('active');
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).classList.remove('active');
-    }
-
-    function closeModalOnBackdrop(event, id) {
-      if (event.target.id === id) {
-        closeModal(id);
-      }
-    }
-
-    function sendDiagnosticWhatsApp() {
-      const area = document.getElementById('diagArea').value;
-      const urgency = document.querySelector('input[name="urgency"]:checked').value;
-      const detail = document.getElementById('diagDetail').value || 'Sin detalles previos';
-
-      const text = `⚖️ *SOLICITUD DE ASESORÍA GRATUITA - V&P ABOGADOS*%0A%0A` +
-                   `📌 *Materia:* ${area}%0A` +
-                   `⏱️ *Urgencia:* ${urgency}%0A` +
-                   `📝 *Detalle:* ${detail}%0A%0A` +
-                   `_Deseo agendar mi primera asesoría legal gratuita._`;
-
-      window.open(`https://wa.me/56979116118?text=${text}`, '_blank');
-      closeModal('diagnosisModal');
-    }
-  </script>
-</body>
-</html>
+    /* Hotspot invisible sobre el contenedor de dirección en el fondo */
+    .map-hot
