@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Vásquez y Parraguez Abogados</title>
   
-  <!-- Favicon SVG en alta resolución -->
+  <!-- Favicon SVG oficial sobre fondo blanco -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23ffffff'/%3E%3Ccircle cx='256' cy='256' r='236' fill='none' stroke='%23d4af37' stroke-width='22'/%3E%3Ccircle cx='256' cy='256' r='220' fill='%230a192f'/%3E%3Ctext x='256' y='325' font-family='Cinzel, Georgia, serif' font-size='165' font-weight='bold' fill='%23d4af37' text-anchor='middle'%3EV%26P%3C/text%3E%3C/svg%3E">
   
-  <!-- Tailwind CSS & Iconos FontAwesome -->
+  <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Tipografías Oficiales -->
+  <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -36,7 +36,7 @@
       overflow-x: hidden;
     }
 
-    /* Contenedor exacto 900x1700 */
+    /* Lienzo exacto 900x1700 px */
     .app-screen {
       width: 100%;
       max-width: 480px;
@@ -54,7 +54,7 @@
       font-family: 'Cinzel', serif;
     }
 
-    /* Calibración del área interactiva central */
+    /* Zona interactiva central calibrada al centro del fondo */
     .content-canvas {
       position: absolute;
       top: 24.5%;
@@ -89,7 +89,7 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
     }
 
-    /* Manos indicadoras animadas */
+    /* Icono de mano pulsante para guiar la interacción */
     .pointer-icon {
       position: absolute;
       right: -8px;
@@ -107,7 +107,7 @@
       100% { transform: translateY(-4px) scale(1.15); }
     }
 
-    /* Accesos directos a canales */
+    /* Botones de canales directos */
     .social-btn {
       flex: 1;
       height: 44px;
@@ -147,7 +147,7 @@
       border: 1px solid #c5a059;
     }
 
-    /* Zona táctil para el footer de la imagen */
+    /* Hotspot táctil del footer fijo para geolocalización */
     .map-hotspot {
       position: absolute;
       bottom: 2.2%;
@@ -159,7 +159,7 @@
       border-radius: 18px;
     }
 
-    /* Modales de servicio */
+    /* Modales */
     .modal-backdrop {
       display: none;
       position: absolute;
@@ -199,7 +199,7 @@
 
   <main class="app-screen">
 
-    <!-- ZONA CENTRAL INTERACTIVA -->
+    <!-- ZONA CENTRAL DE BOTONES E INTERACCIÓN -->
     <section class="content-canvas">
 
       <!-- FACTOR INNOVACIÓN: ASISTENTE DE DIAGNÓSTICO -->
@@ -264,10 +264,10 @@
         <i class="fa-solid fa-hand-pointer pointer-icon"></i>
       </div>
 
-      <!-- REDES Y CONTACTO DIRECTO -->
+      <!-- ACCESOS DE CONTACTO DIRECTO -->
       <div class="flex gap-2.5 pt-1">
         <!-- WhatsApp -->
-        <a href="https://wa.me/56979116118?text=Hola,%20quisiera%20solicitar%20una%20asesor%C3%ADa%20jur%C3%ADdica%20con%20V%C3%A1squez%20y%20Parraguez." target="_blank" class="social-btn btn-whatsapp relative">
+        <a href="https://wa.me/56979116118?text=Hola,%20quisiera%20agendar%20mi%20primera%20asesor%C3%ADa%20gratuita%20con%20V%C3%A1squez%20y%20Parraguez." target="_blank" class="social-btn btn-whatsapp relative">
           <i class="fa-brands fa-whatsapp text-lg"></i>
           <span>WhatsApp</span>
           <i class="fa-solid fa-hand-pointer pointer-icon !text-white !right-0 !bottom-[-6px]"></i>
@@ -280,7 +280,7 @@
         </a>
 
         <!-- Correo -->
-        <a href="mailto:vasquezyparraguezasociados@gmail.com?subject=Consulta%20Jur%C3%ADdica" class="social-btn btn-email">
+        <a href="mailto:vasquezyparraguezasociados@gmail.com?subject=Solicitud%20de%20Primera%20Asesor%C3%ADa%20Gratuita" class="social-btn btn-email">
           <i class="fa-solid fa-envelope text-lg"></i>
           <span>Email</span>
         </a>
@@ -288,40 +288,43 @@
 
     </section>
 
-    <!-- HOTSPOT DEL MAPA EN EL FOOTER -->
+    <!-- FOOTER FIJO: HOTSPOT PARA ABRIR GOOGLE MAPS -->
     <a href="https://www.google.com/maps/search/?api=1&query=Calle+Comercio+19940+San+Jose+de+Maipo+Portal+Isidora" 
        target="_blank" 
        class="map-hotspot" 
        title="Abrir ubicación en Google Maps">
     </a>
 
-    <!-- MODAL DETALLE DE ÁREAS -->
+    <!-- MODAL DETALLE DE ÁREAS JURÍDICAS -->
     <div id="serviceModal" class="modal-backdrop" onclick="closeModalOnBackdrop(event, 'serviceModal')">
       <div class="modal-sheet">
+        <!-- Encabezado del Modal -->
         <div class="bg-[#0a192f] p-4 border-b border-[#c5a059] flex items-center justify-between">
           <div class="flex items-center gap-2.5">
             <i id="modalIcon" class="fa-solid fa-balance-scale text-[#d4af37] text-lg"></i>
             <h4 id="modalTitle" class="font-cinzel text-sm font-bold text-white tracking-wide">ÁREA LEGAL</h4>
           </div>
-          <button onclick="closeModal('serviceModal')" class="w-8 h-8 rounded-full bg-[#1e293b] text-[#d4af37] flex items-center justify-center">
+          <button onclick="closeModal('serviceModal')" class="w-8 h-8 rounded-full bg-[#1e293b] text-[#d4af37] flex items-center justify-center hover:bg-[#334155]">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
 
+        <!-- Lista de Servicios -->
         <div class="p-4 overflow-y-auto max-h-[55vh]">
           <p id="modalDesc" class="text-xs text-slate-600 mb-3 leading-relaxed"></p>
           <ul id="modalList" class="space-y-2 text-xs text-slate-800 mb-4"></ul>
           
           <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 mb-2">
-            <span class="block text-[11px] font-bold text-amber-900 mb-0.5">Atención Directa</span>
-            <p class="text-[10px] text-amber-800 leading-tight">Recibe evaluación inicial y honorarios por WhatsApp con un abogado del equipo.</p>
+            <span class="block text-[11px] font-bold text-amber-900 mb-0.5">Asesoría Inicial</span>
+            <p class="text-[10px] text-amber-800 leading-tight">Coordina tu primera evaluación de caso sin costo directamente por WhatsApp.</p>
           </div>
         </div>
 
+        <!-- Botón de Acción del Modal -->
         <div class="p-3 bg-slate-50 border-t border-slate-200">
           <a id="modalActionBtn" href="#" target="_blank" class="w-full py-2.5 px-4 bg-gradient-to-r from-[#128c7e] to-[#25d366] text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md">
             <i class="fa-brands fa-whatsapp text-sm"></i>
-            <span>Consultar por esta área</span>
+            <span>Agendar primera asesoría gratuita</span>
           </a>
         </div>
       </div>
@@ -341,6 +344,7 @@
         </div>
 
         <div class="p-4 space-y-4">
+          <!-- Paso 1 -->
           <div>
             <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">1. Materia del caso:</label>
             <select id="diagArea" class="w-full p-2.5 text-xs bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-medium focus:border-[#c5a059] outline-none">
@@ -351,30 +355,32 @@
             </select>
           </div>
 
+          <!-- Paso 2 -->
           <div>
             <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">2. Nivel de urgencia:</label>
             <div class="grid grid-cols-2 gap-2 text-xs">
               <label class="border border-slate-300 rounded-lg p-2.5 flex items-center gap-2 cursor-pointer has-[:checked]:border-[#c5a059] has-[:checked]:bg-amber-50/50">
-                <input type="radio" name="urgency" value="Urgente (Dentro de las 24 hrs)" checked class="accent-[#c5a059]">
+                <input type="radio" name="urgency" value="Inmediata (Dentro de las 24 hrs)" checked class="accent-[#c5a059]">
                 <span class="text-slate-700 font-medium text-[11px]">Inmediata (24 hrs)</span>
               </label>
               <label class="border border-slate-300 rounded-lg p-2.5 flex items-center gap-2 cursor-pointer has-[:checked]:border-[#c5a059] has-[:checked]:bg-amber-50/50">
-                <input type="radio" name="urgency" value="Informativa / Agendamiento esta semana" class="accent-[#c5a059]">
+                <input type="radio" name="urgency" value="Agendamiento durante la semana" class="accent-[#c5a059]">
                 <span class="text-slate-700 font-medium text-[11px]">Agendar semana</span>
               </label>
             </div>
           </div>
 
+          <!-- Paso 3 -->
           <div>
             <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">3. Breve detalle (Opcional):</label>
-            <input id="diagDetail" type="text" placeholder="Ej: Posesión efectiva en San José de Maipo" class="w-full p-2.5 text-xs bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:border-[#c5a059] outline-none">
+            <input id="diagDetail" type="text" placeholder="Ej: Consulta por posesión efectiva en San José de Maipo" class="w-full p-2.5 text-xs bg-slate-50 border border-slate-300 rounded-lg text-slate-800 focus:border-[#c5a059] outline-none">
           </div>
         </div>
 
         <div class="p-3 bg-slate-50 border-t border-slate-200">
           <button onclick="sendDiagnosticWhatsApp()" class="w-full py-2.5 bg-gradient-to-r from-[#0a192f] to-[#1e3a8a] text-[#d4af37] border border-[#c5a059] rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-md">
             <i class="fa-brands fa-whatsapp text-sm text-green-400"></i>
-            <span>Transferir caso al Abogado</span>
+            <span>Agendar primera asesoría gratuita</span>
           </button>
         </div>
       </div>
@@ -382,6 +388,7 @@
 
   </main>
 
+  <!-- LÓGICA DE INTERACCIÓN Y WHATSAPP -->
   <script>
     const serviceData = {
       civil: {
@@ -441,7 +448,7 @@
         listEl.appendChild(li);
       });
 
-      const message = encodeURIComponent(`Hola, me comunico desde la web móvil para consultar por servicios en: ${data.title}.`);
+      const message = encodeURIComponent(`Hola, me comunico desde la web móvil para solicitar mi primera asesoría gratuita en: ${data.title}.`);
       document.getElementById('modalActionBtn').href = `https://wa.me/56979116118?text=${message}`;
 
       document.getElementById('serviceModal').classList.add('active');
@@ -466,11 +473,11 @@
       const urgency = document.querySelector('input[name="urgency"]:checked').value;
       const detail = document.getElementById('diagDetail').value || 'Sin detalles previos';
 
-      const text = `⚖️ *CONSULTA LEGAL RÁPIDA - V&P ABOGADOS*%0A%0A` +
+      const text = `⚖️ *SOLICITUD DE ASESORÍA GRATUITA - V&P ABOGADOS*%0A%0A` +
                    `📌 *Materia:* ${area}%0A` +
                    `⏱️ *Urgencia:* ${urgency}%0A` +
                    `📝 *Detalle:* ${detail}%0A%0A` +
-                   `_Deseo recibir orientación y conocer honorarios._`;
+                   `_Deseo agendar mi primera asesoría legal gratuita._`;
 
       window.open(`https://wa.me/56979116118?text=${text}`, '_blank');
       closeModal('diagnosisModal');
